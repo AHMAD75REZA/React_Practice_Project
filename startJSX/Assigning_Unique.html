@@ -1,0 +1,71 @@
+<html>
+
+<head>
+    <title> Arrays and Objects in jSX </title>
+
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+</head>
+
+<body>
+    <!-- <h1>Let's start JSX </h1> -->
+
+    <div id="root"></div>
+    <script type="text/babel">
+        const students = [{
+            name: "Ahmad",
+            age: 25,
+            marks: 85
+        },
+        {
+            name: "Jakir",
+            age: 20,
+            marks: 90
+        },
+        {
+            name: "Asif",
+            age: 25,
+            marks: 95
+        }
+        ]
+        function App() {
+
+            return (
+                <>
+                    <h1> Student details </h1>
+                    <table>
+                        <thead>
+                        <tr>
+                            <th>stud_Name </th>
+                            <th>stud_Age </th>
+                            <th>stud_Marks </th>
+                        </tr>
+                        </thead>
+
+                        <tbody>
+                        {
+                        students.map((student, index) => (
+                            
+                        <tr key = {index}> 
+                            <td> {student.name} </td>
+                            <td> {student.age} </td>
+                            <td> {student.marks} </td>
+                         </tr>
+                        ))}
+                        </tbody>
+                    </table>
+
+                    
+                </>
+            )
+        }
+
+        const rootElement = ReactDOM.createRoot(document.getElementById("root"));
+        rootElement.render(<App />);
+    </script>
+
+</body>
+
+</html>

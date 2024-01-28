@@ -1,0 +1,93 @@
+<html>
+
+<head>
+    <title> Cars Details </title>
+
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <link rel="stylesheet" href="index.css">
+
+</head>
+
+<body>
+    <!-- <h1>Let's start JSX </h1> -->
+
+    <div id="root"></div>
+    <script type="text/babel">
+        const Cars = [{
+            name: "OOOD",
+            avg: 25,
+            img: "https://cdn-icons-png.flaticon.com/128/7904/7904456.png"
+        },
+        {
+            name: "BMW",
+            avg: 20,
+            img: "https://cdn-icons-png.flaticon.com/128/7904/7904456.png"
+
+        },
+        {
+            name: "VOLVO",
+            avg: 25,
+            img: "https://cdn-icons-png.flaticon.com/128/7904/7904456.png"
+        }
+        ]
+        function App() {
+
+            return (
+                <>
+                    <h1> Cars details </h1>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Car_Name </th>
+                                <th>Car_Avg </th>
+                                <th>Car_Image </th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            {
+                                Cars.map((Cars, index) => (
+
+                                    <tr key={index}>
+                                        <td> {Cars.name} </td>
+                                        <td> {Cars.avg} </td>
+                                        <td> <img src={Cars.img} /> </td>
+                                    </tr>
+                                ))}
+                        </tbody>
+                    </table>
+
+
+                </>
+            )
+        }
+
+        function Apps() {
+            let showCars = false;
+
+            if (showCars) {
+                return <CarsPage />
+            }
+            let loggedIn = true;
+
+            return (
+                <>
+                    <h1> Hello {loggedIn ? "Alexa" : "User"} !</h1>
+                </>
+            )
+        }
+        function UserGreeting(props) {
+            return <h1>Welcome back!</h1>;
+        }
+
+        
+
+        const rootElement = ReactDOM.createRoot(document.getElementById("root"));
+        rootElement.render(<><App /> <Apps /> </>);
+    </script>
+
+</body>
+
+</html>

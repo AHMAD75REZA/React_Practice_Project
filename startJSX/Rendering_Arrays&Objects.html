@@ -1,0 +1,54 @@
+<html>
+
+<head>
+    <title> Arrays and Objects in jSX </title>
+
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+</head>
+
+<body>
+    <!-- <h1>Let's start JSX </h1> -->
+
+    <div id="root"></div>
+    <script type="text/babel">
+
+        function App(){
+            let arr = [1,2,3,4,5,6];
+            const cars = ['BMW','OOOD','VOLVO','NEXA'];
+
+
+            let obj = {
+                name:"Ahmad",
+                age: 24
+            }
+            return(
+                <>
+                <h1> Arrays and Objects in JavaScripts </h1>
+                <h2> {arr} </h2>
+                {arr.map((num) =><h2>{num}</h2> )}
+                <h3> {obj.name} </h3>
+                <h3> {obj.age} </h3>
+                
+                <h3> {cars} </h3>
+                {
+                    cars.map((car, index) =>
+                
+                 
+                    <ul>
+                        <li key ={index}>{car} </li>
+                    </ul>         
+                 )};
+                </>
+            )
+        }
+       
+     const rootElement = ReactDOM.createRoot(document.getElementById("root"));
+     rootElement.render(<App />);
+    </script>
+
+</body>
+
+</html>
